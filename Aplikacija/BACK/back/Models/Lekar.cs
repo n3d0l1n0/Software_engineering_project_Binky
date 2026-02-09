@@ -1,0 +1,39 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace MyBackend.Models
+{
+    [Table("lekar")]
+    public class Lekar
+    {
+        [Key]
+        [Column("id")]
+        public int Id { get; set; }
+
+        [Column("imeiprezime")]
+        public string ImeIPrezime { get; set; } = string.Empty;
+
+        [Column("datumrodjenja")]
+        public DateTime DatumRodjenja { get; set; }
+
+        [Column("email")]
+        public string Email { get; set; } = string.Empty;
+
+        [Column("lozinka")]
+        public string Lozinka { get; set; } = string.Empty;
+
+        [Column("telefon")]
+        public string Telefon { get; set; } = string.Empty;
+
+        [Column("profilnaslika")]
+        public string? ProfilnaSlika { get; set; }
+
+        [Column("ustanova")]
+        public string Ustanova { get; set; } = string.Empty;
+
+        [Column("prostorija")]
+        public string Prostorija { get; set; } = string.Empty;
+
+        public ICollection<Leci>? Leci { get; set; }
+    }
+}

@@ -1,0 +1,28 @@
+INSERT INTO Lekar (ImeIPrezime, DatumRodjenja, Email, Lozinka, Telefon, ProfilnaSlika, Ustanova, Prostorija) VALUES
+('Dr. Milan Petrović', '1980-05-15', 'milan.petrovic@bolnica.rs', 'lozinka123', '0641234567', 'slike/milan.jpg', 'Klinički Centar Srbije', 'Ordinacija 1'),
+('Dr. Jelena Jovanović', '1985-09-20', 'jelena.jovanovic@domzdravlja.rs', 'lozinka456', '0657654321', 'slike/jelena.jpg', 'Dom Zdravlja "Novi Beograd"', 'Ordinacija 3'),
+('Dr. Nikola Nikolić', '1978-12-10', 'nikola.nikolic@ginekologija.rs', 'lozinka789', '0639876543', 'slike/nikola.jpg', 'GAK "Narodni Front"', 'Ordinacija 5');
+
+INSERT INTO Porodilja (ImeIPrezime, DatumRodjenja, Email, Lozinka, Telefon, JMBG, LBO, PocetakTrudnoce, DozvoljenoPrikazivanje) VALUES
+('Ana Anić', '1992-03-12', 'ana.anic@email.com', 'ana123', '0641112233', '1203992715023', '12345678901', '2025-01-15', TRUE),
+('Marija Marić', '1995-07-25', 'marija.maric@email.com', 'marija456', '0654445566', '2507995715034', '10987654321', '2025-03-01', FALSE),
+('Jovana Jović', '1990-11-08', 'jovana.jovic@email.com', 'jovana789', '0637778899', '0811990715045', '11223344556', '2024-12-10', TRUE);
+
+INSERT INTO Leci (IDPorodilje, IDLekara, Aktivno) VALUES
+(1, 1, TRUE),
+(2, 2, TRUE),
+(3, 1, TRUE);
+
+INSERT INTO Pregled (Termin, IDLeci, IDTipaPregleda, JePotvrdjen) VALUES
+('2025-02-15 10:00:00', 1, 1, TRUE),
+('2025-03-20 11:30:00', 2, 4, TRUE),
+('2025-01-10 09:00:00', 3, 1, FALSE);
+
+INSERT INTO Rezultat (Datum, Tip, Sadrzaj, IDPregleda) VALUES
+('2025-02-16', 'Krvna slika', 'Kompletna krvna slika u granicama normale.', 1),
+('2025-03-21', 'Ultrazvuk', 'Ultrazvučni nalaz uredan, odgovara gestacijskoj nedelji.', 2);
+
+INSERT INTO Preporuka (IDLeci, Tekst, DatumOd, DatumDo) VALUES
+(1, 'Povećan unos gvožđa kroz ishranu i suplemente. Kontrola za mesec dana.', '2025-02-16', '2025-03-16'),
+(2, 'Preporučuje se mirovanje i izbegavanje težih fizičkih aktivnosti.', '2025-03-21', '2025-04-21');
+
