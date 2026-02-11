@@ -20,17 +20,9 @@ CREATE TABLE Porodilja(
 	JMBG varchar(255) UNIQUE NOT NULL,
 	LBO varchar(15) UNIQUE NOT NULL,
 	PocetakTrudnoce date NOT NULL,
-	SePorodila BOOLEAN NOT NULL DEFAULT FALSE
+	SePorodila BOOLEAN NOT NULL DEFAULT FALSE,
+	ProfilnaSlika VARCHAR(255)
 );
-
-ALTER TABLE Porodilja
-DROP COLUMN DozvoljenoPrikazivanje;
-
-ALTER TABLE Pregled
-ADD COLUMN DozvoljenoPrikazivanje BOOLEAN DEFAULT FALSE;
-
-ALTER TABLE Porodilja
-ADD ProfilnaSlika VARCHAR(255);
 
 CREATE TABLE Leci(
 	ID serial PRIMARY KEY,
@@ -44,7 +36,8 @@ CREATE TABLE Pregled(
 	Termin timestamp NOT NULL,
 	IDLeci integer NOT NULL,
 	IDTipaPregleda integer NOT NULL,
-	JePotvrdjen boolean NOT NULL DEFAULT FALSE
+	JePotvrdjen boolean NOT NULL DEFAULT FALSE,
+	DozvoljenoPrikazivanje BOOLEAN DEFAULT FALSE
 );
 
 CREATE TABLE TipPregleda(
@@ -56,25 +49,18 @@ CREATE TABLE TipPregleda(
 CREATE TABLE Rezultat(
 	ID serial PRIMARY KEY,
 	Datum date NOT NULL,
-	Tip rezultatenum NOT NULL,
 	Sadrzaj varchar(255) NOT NULL,
-	IDPregleda integer NOT NULL
-);
-
-ALTER TABLE Rezultat
-DROP COLUMN Tip;
-
-ALTER TABLE rezultat
-ADD COLUMN tip VARCHAR(50)
-    CHECK (tip IN (
-        'Krvna slika',
+	IDPregleda integer NOT NULL,
+	tip VARCHAR(50) CHECK 
+		( tip IN (
+		'Krvna slika',
         'Biohemija',
         'Ultrazvuk',
         'Urinokultura',
         'Nalaz sa infektologije',
         'Prenatalni test'
-    ));
-
+		))
+);
 
 CREATE TABLE Preporuka(
 	ID serial PRIMARY KEY,

@@ -1,12 +1,12 @@
 INSERT INTO Lekar (ImeIPrezime, DatumRodjenja, Email, Lozinka, Telefon, ProfilnaSlika, Ustanova, Prostorija) VALUES
-('Dr. Milan Petrović', '1980-05-15', 'milan.petrovic@bolnica.rs', 'lozinka123', '0641234567', 'slike/milan.jpg', 'Klinički Centar Srbije', 'Ordinacija 1'),
-('Dr. Jelena Jovanović', '1985-09-20', 'jelena.jovanovic@domzdravlja.rs', 'lozinka456', '0657654321', 'slike/jelena.jpg', 'Dom Zdravlja "Novi Beograd"', 'Ordinacija 3'),
-('Dr. Nikola Nikolić', '1978-12-10', 'nikola.nikolic@ginekologija.rs', 'lozinka789', '0639876543', 'slike/nikola.jpg', 'GAK "Narodni Front"', 'Ordinacija 5');
+('Dr. Milan Petrović', '1980-05-15', 'milan.petrovic@bolnica.rs', '$2b$12$hOGf.UNeB8SXnLlnYmlsl.iBpJJ34AVMdn2Qcgpx2WMkgMhMdRkI6', '0641234567', NULL, 'Klinički Centar Srbije', 'Ordinacija 1'),
+('Dr. Jelena Jovanović', '1985-09-20', 'jelena.jovanovic@domzdravlja.rs', '$2b$12$hOGf.UNeB8SXnLlnYmlsl.iBpJJ34AVMdn2Qcgpx2WMkgMhMdRkI6', '0657654321', NULL, 'Dom Zdravlja "Novi Beograd"', 'Ordinacija 3'),
+('Dr. Nikola Nikolić', '1978-12-10', 'nikola.nikolic@ginekologija.rs', '$2b$12$hOGf.UNeB8SXnLlnYmlsl.iBpJJ34AVMdn2Qcgpx2WMkgMhMdRkI6', '0639876543', NULL, 'GAK "Narodni Front"', 'Ordinacija 5');
 
-INSERT INTO Porodilja (ImeIPrezime, DatumRodjenja, Email, Lozinka, Telefon, JMBG, LBO, PocetakTrudnoce, DozvoljenoPrikazivanje) VALUES
-('Ana Anić', '1992-03-12', 'ana.anic@email.com', 'ana123', '0641112233', '1203992715023', '12345678901', '2025-01-15', TRUE),
-('Marija Marić', '1995-07-25', 'marija.maric@email.com', 'marija456', '0654445566', '2507995715034', '10987654321', '2025-03-01', FALSE),
-('Jovana Jović', '1990-11-08', 'jovana.jovic@email.com', 'jovana789', '0637778899', '0811990715045', '11223344556', '2024-12-10', TRUE);
+INSERT INTO Porodilja (ImeIPrezime, DatumRodjenja, Email, Lozinka, Telefon, JMBG, LBO, PocetakTrudnoce) VALUES
+('Ana Anić', '1992-03-12', 'ana.anic@email.com', '$2b$12$hOGf.UNeB8SXnLlnYmlsl.iBpJJ34AVMdn2Qcgpx2WMkgMhMdRkI6', '0641112233', '1203992715023', '12345678901', '2025-01-15'),
+('Marija Marić', '1995-07-25', 'marija.maric@email.com', '$2b$12$hOGf.UNeB8SXnLlnYmlsl.iBpJJ34AVMdn2Qcgpx2WMkgMhMdRkI6', '0654445566', '2507995715034', '10987654321', '2025-03-01'),
+('Jovana Jović', '1990-11-08', 'jovana.jovic@email.com', '$2b$12$hOGf.UNeB8SXnLlnYmlsl.iBpJJ34AVMdn2Qcgpx2WMkgMhMdRkI6', '0637778899', '0811990715045', '11223344556', '2024-12-10');
 
 INSERT INTO Leci (IDPorodilje, IDLekara, Aktivno) VALUES
 (1, 1, TRUE),
